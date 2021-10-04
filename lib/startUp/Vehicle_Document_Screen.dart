@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fox_taxi_rider/home/HomeMapScreen.dart';
 import 'package:fox_taxi_rider/startUp/Add_Vehicle_Screen.dart';
 import 'package:fox_taxi_rider/startUp/Subscription_Plan_Screen.dart';
 import '../GlobalVariables.dart';
@@ -22,27 +23,31 @@ class _Vehicle_Document_ScreenState extends State<Vehicle_Document_Screen> {
             style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700),
           ),
           centerTitle: true,
-          leading:
-          IconButton(icon: Icon(Icons.arrow_back)), // appbar leading icon.
+          elevation: 0,
+            iconTheme: IconThemeData(color: Colors.black),
         ),
         body: Container(
+          margin: EdgeInsets.only(top: 3),
           color: Colors.white,
           padding: EdgeInsets.only(left: 20, right: 20),
-          child: ListView(
-            children: [
-              sizedBox025(),
-              RCBookContainer(),
-              sizedBox025(),
-              InsurencePolicyContainer(),
-              sizedBox025(),
-              OwnerCertificatesContainer(),
-              sizedBox025(),
-              PUC(),
-              sizedBox0035(),
-              terms_Conditions(),
-              sizedBox0035(),
-              NextContainer(),
-            ],
+          child: ScrollConfiguration(
+            behavior: MyBehavior(),
+            child: ListView(
+              children: [
+                sizedBox025(),
+                RCBookContainer(),
+                sizedBox025(),
+                InsurencePolicyContainer(),
+                sizedBox025(),
+                OwnerCertificatesContainer(),
+                sizedBox025(),
+                PUC(),
+                sizedBox0035(),
+                terms_Conditions(),
+                sizedBox0035(),
+                NextContainer(),
+              ],
+            ),
           ),
         ));
   }
@@ -214,12 +219,12 @@ class _Vehicle_Document_ScreenState extends State<Vehicle_Document_Screen> {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => Subscription_Plan_Screeen()),
+            MaterialPageRoute(builder: (context) => HomeMapScreen()),
           );
         },
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.grey,
+            color: globalVariables.APP_THEME_COLOR,
             borderRadius: BorderRadius.circular(
                 MediaQuery.of(context).size.height * 0.06 / 2),
           ),

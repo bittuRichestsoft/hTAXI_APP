@@ -6,6 +6,8 @@ import 'package:fox_taxi_rider/home/home.dart';
 import 'package:fox_taxi_rider/startUp/Subscription_Plan_Screen.dart';
 import 'package:fox_taxi_rider/startUp/Wallet_Screen.dart';
 
+import '../Earning_Screen.dart';
+
 class ProfileScreen extends StatefulWidget {
   @override
   _ProfileScreenState createState() => _ProfileScreenState();
@@ -72,12 +74,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   Widget earningLogo() {
     return GestureDetector(
-      onTap: (){
-        // Navigator.push(
-        //   context,
-        //   MaterialPageRoute(builder: (context) => home()),
-        // );
-      },
+      // onTap: (){
+      //   Navigator.push(
+      //     context,
+      //     MaterialPageRoute(builder: (context) => Earning_Screen()),
+      //   );
+      // },
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,

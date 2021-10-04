@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fox_taxi_rider/GlobalVariables.dart';
+import 'package:fox_taxi_rider/home/HomeMapScreen.dart';
 import 'package:fox_taxi_rider/startUp/Create_Profile_Screen.dart';
 
 class Reset_Password_Screen extends StatefulWidget {
@@ -97,7 +98,7 @@ class _Reset_Password_ScreenState extends State<Reset_Password_Screen> {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => Create_Profile_Screen()),
+            MaterialPageRoute(builder: (context) => HomeMapScreen()),
           );
         },
         child: Container(

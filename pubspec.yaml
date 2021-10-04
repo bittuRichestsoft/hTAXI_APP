@@ -34,7 +34,7 @@ dependencies:
   flutter_google_places: ^0.2.4
   google_place: ^0.4.3
   uuid: ^3.0.4
-
+  charts_flutter: ^0.11.0
 
 
 

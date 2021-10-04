@@ -19,8 +19,8 @@ class _Wallet_ScreenState extends State<Wallet_Screen> {
             style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700),
           ),
           centerTitle: true,
-          leading:
-              IconButton(icon: Icon(Icons.arrow_back)), // appbar leading icon.
+          elevation: 0,
+          iconTheme: IconThemeData(color: Colors.black),
         ),
         body: Column(
           children: [
@@ -114,186 +114,189 @@ class _Wallet_ScreenState extends State<Wallet_Screen> {
 
   Widget detailsListView() {
     return Expanded(
-      child: ListView(
-        shrinkWrap: true,
-        children: [
-          Container(
-            padding: EdgeInsets.only(
-                left: MediaQuery.of(context).size.width * 0.07,
-                right: MediaQuery.of(context).size.width * 0.07),
-            width: MediaQuery.of(context).size.width,
-            //height: MediaQuery.of(context).size.height * 0.005,
-            child: Text(
-              'APRIL 2020',
-              style: TextStyle(fontSize: fontSIZE()),
+      child: ScrollConfiguration(
+        behavior: MyBehavior(),
+        child: ListView(
+          shrinkWrap: true,
+          children: [
+            Container(
+              padding: EdgeInsets.only(
+                  left: MediaQuery.of(context).size.width * 0.07,
+                  right: MediaQuery.of(context).size.width * 0.07),
+              width: MediaQuery.of(context).size.width,
+              //height: MediaQuery.of(context).size.height * 0.005,
+              child: Text(
+                'APRIL 2020',
+                style: TextStyle(fontSize: fontSIZE()),
+              ),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.only(
+            Container(
+              padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height * 0.015,
+                  left: MediaQuery.of(context).size.width * 0.07,
+                  right: MediaQuery.of(context).size.width * 0.07,),
+              color: Colors.white,
+              // height: MediaQuery.of(context).size.height * 0.12,
+              child: Column(
+                children: [
+                  Center(
+                    child: ListTile(
+                      leading: Icon(Icons.account_balance_wallet_outlined),
+                      title: Text(
+                        "Add to wallet",
+                        style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
+                      ),
+                      subtitle: Text(
+                        '1st feb\'19• # 54224',
+                        style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
+                      ),
+                      trailing: Text(
+                        "5454",
+                        style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
+                      ),
+                    ),
+                  ),
+                  listViewHeightSizedBox(),
+                  Divider(
+                    height: 1,
+                  )
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(
                 top: MediaQuery.of(context).size.height * 0.015,
                 left: MediaQuery.of(context).size.width * 0.07,
                 right: MediaQuery.of(context).size.width * 0.07,),
-            color: Colors.white,
-            // height: MediaQuery.of(context).size.height * 0.12,
-            child: Column(
-              children: [
-                Center(
-                  child: ListTile(
-                    leading: Icon(Icons.account_balance_wallet_outlined),
-                    title: Text(
-                      "Add to wallet",
-                      style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
-                    ),
-                    subtitle: Text(
-                      '1st feb\'19• # 54224',
-                      style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
-                    ),
-                    trailing: Text(
-                      "5454",
-                      style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
-                    ),
-                  ),
-                ),
-                listViewHeightSizedBox(),
-                Divider(
-                  height: 1,
-                )
-              ],
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.only(
-              top: MediaQuery.of(context).size.height * 0.015,
-              left: MediaQuery.of(context).size.width * 0.07,
-              right: MediaQuery.of(context).size.width * 0.07,),
-            color: Colors.white,
-            // height: MediaQuery.of(context).size.height * 0.12,
-            child: Column(
-              children: [
-                Center(
-                  child: ListTile(
-                    leading: Icon(Icons.account_balance_wallet_outlined),
-                    title: Text(
-                      "Add to wallet",
-                      style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
-                    ),
-                    subtitle: Text(
-                      '1st feb\'19• # 54224',
-                      style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
-                    ),
-                    trailing: Text(
-                      "5454",
-                      style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
+              color: Colors.white,
+              // height: MediaQuery.of(context).size.height * 0.12,
+              child: Column(
+                children: [
+                  Center(
+                    child: ListTile(
+                      leading: Icon(Icons.account_balance_wallet_outlined),
+                      title: Text(
+                        "Add to wallet",
+                        style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
+                      ),
+                      subtitle: Text(
+                        '1st feb\'19• # 54224',
+                        style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
+                      ),
+                      trailing: Text(
+                        "5454",
+                        style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
+                      ),
                     ),
                   ),
-                ),
-                listViewHeightSizedBox(),
-                Divider(
-                  height: 1,
-                )
-              ],
+                  listViewHeightSizedBox(),
+                  Divider(
+                    height: 1,
+                  )
+                ],
+              ),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.only(
-              top: MediaQuery.of(context).size.height * 0.015,
-              left: MediaQuery.of(context).size.width * 0.07,
-              right: MediaQuery.of(context).size.width * 0.07,),
-            color: Colors.white,
-            // height: MediaQuery.of(context).size.height * 0.12,
-            child: Column(
-              children: [
-                Center(
-                  child: ListTile(
-                    leading: Icon(Icons.account_balance_wallet_outlined),
-                    title: Text(
-                      "Add to wallet",
-                      style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
-                    ),
-                    subtitle: Text(
-                      '1st feb\'19• # 54224',
-                      style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
-                    ),
-                    trailing: Text(
-                      "5454",
-                      style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
+            Container(
+              padding: EdgeInsets.only(
+                top: MediaQuery.of(context).size.height * 0.015,
+                left: MediaQuery.of(context).size.width * 0.07,
+                right: MediaQuery.of(context).size.width * 0.07,),
+              color: Colors.white,
+              // height: MediaQuery.of(context).size.height * 0.12,
+              child: Column(
+                children: [
+                  Center(
+                    child: ListTile(
+                      leading: Icon(Icons.account_balance_wallet_outlined),
+                      title: Text(
+                        "Add to wallet",
+                        style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
+                      ),
+                      subtitle: Text(
+                        '1st feb\'19• # 54224',
+                        style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
+                      ),
+                      trailing: Text(
+                        "5454",
+                        style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
+                      ),
                     ),
                   ),
-                ),
-                listViewHeightSizedBox(),
-                Divider(
-                  height: 1,
-                )
-              ],
+                  listViewHeightSizedBox(),
+                  Divider(
+                    height: 1,
+                  )
+                ],
+              ),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.only(
-              top: MediaQuery.of(context).size.height * 0.015,
-              left: MediaQuery.of(context).size.width * 0.07,
-              right: MediaQuery.of(context).size.width * 0.07,),
-            color: Colors.white,
-            // height: MediaQuery.of(context).size.height * 0.12,
-            child: Column(
-              children: [
-                Center(
-                  child: ListTile(
-                    leading: Icon(Icons.account_balance_wallet_outlined),
-                    title: Text(
-                      "Add to wallet",
-                      style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
-                    ),
-                    subtitle: Text(
-                      '1st feb\'19• # 54224',
-                      style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
-                    ),
-                    trailing: Text(
-                      "5454",
-                      style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
+            Container(
+              padding: EdgeInsets.only(
+                top: MediaQuery.of(context).size.height * 0.015,
+                left: MediaQuery.of(context).size.width * 0.07,
+                right: MediaQuery.of(context).size.width * 0.07,),
+              color: Colors.white,
+              // height: MediaQuery.of(context).size.height * 0.12,
+              child: Column(
+                children: [
+                  Center(
+                    child: ListTile(
+                      leading: Icon(Icons.account_balance_wallet_outlined),
+                      title: Text(
+                        "Add to wallet",
+                        style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
+                      ),
+                      subtitle: Text(
+                        '1st feb\'19• # 54224',
+                        style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
+                      ),
+                      trailing: Text(
+                        "5454",
+                        style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
+                      ),
                     ),
                   ),
-                ),
-                listViewHeightSizedBox(),
-                Divider(
-                  height: 1,
-                )
-              ],
+                  listViewHeightSizedBox(),
+                  Divider(
+                    height: 1,
+                  )
+                ],
+              ),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.only(
-              top: MediaQuery.of(context).size.height * 0.015,
-              left: MediaQuery.of(context).size.width * 0.07,
-              right: MediaQuery.of(context).size.width * 0.07,),
-            color: Colors.white,
-            // height: MediaQuery.of(context).size.height * 0.12,
-            child: Column(
-              children: [
-                Center(
-                  child: ListTile(
-                    leading: Icon(Icons.account_balance_wallet_outlined),
-                    title: Text(
-                      "Add to wallet",
-                      style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
-                    ),
-                    subtitle: Text(
-                      '1st feb\'19• # 54224',
-                      style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
-                    ),
-                    trailing: Text(
-                      "5454",
-                      style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
+            Container(
+              padding: EdgeInsets.only(
+                top: MediaQuery.of(context).size.height * 0.015,
+                left: MediaQuery.of(context).size.width * 0.07,
+                right: MediaQuery.of(context).size.width * 0.07,),
+              color: Colors.white,
+              // height: MediaQuery.of(context).size.height * 0.12,
+              child: Column(
+                children: [
+                  Center(
+                    child: ListTile(
+                      leading: Icon(Icons.account_balance_wallet_outlined),
+                      title: Text(
+                        "Add to wallet",
+                        style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
+                      ),
+                      subtitle: Text(
+                        '1st feb\'19• # 54224',
+                        style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
+                      ),
+                      trailing: Text(
+                        "5454",
+                        style: TextStyle(fontSize: fontSIZE(), color: Colors.grey),
+                      ),
                     ),
                   ),
-                ),
-                listViewHeightSizedBox(),
-                Divider(
-                  height: 1,
-                )
-              ],
+                  listViewHeightSizedBox(),
+                  Divider(
+                    height: 1,
+                  )
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

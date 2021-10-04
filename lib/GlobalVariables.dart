@@ -11,3 +11,19 @@ class globalVariables {
 double hFontSize(context){
   return MediaQuery.of(context).size.height*0.026;
 }
+
+double hWidth(context){
+  return MediaQuery.of(context).size.width;
+}
+
+double hHeight(context){
+  return MediaQuery.of(context).size.height;
+}
+
+class MyBehavior extends ScrollBehavior {
+  @override
+  Widget buildViewportChrome(
+      BuildContext context, Widget child, AxisDirection axisDirection) {
+    return child;
+  }
+}

@@ -154,9 +154,7 @@ class _CompleteTripScreenState extends State<CompleteTripScreen> {
     return Align(
       alignment: Alignment.bottomRight,
       child: Container(
-        alignment: Alignment.center,
-        width: MediaQuery.of(context).size.width * 0.45,
-        height: MediaQuery.of(context).size.height * 0.09,
+        width: MediaQuery.of(context).size.width * 0.4,
         margin: EdgeInsets.only(
             right: MediaQuery.of(context).size.width * 0.05),
         decoration: BoxDecoration(
@@ -164,12 +162,14 @@ class _CompleteTripScreenState extends State<CompleteTripScreen> {
             borderRadius: BorderRadius.all(Radius.circular(
                 MediaQuery.of(context).size.width * 0.05))),
         child: ListTile(
+          minVerticalPadding: MediaQuery.of(context).size.width * 0.05,
+          minLeadingWidth: MediaQuery.of(context).size.width * 0.05,
+          horizontalTitleGap: MediaQuery.of(context).size.width * 0.02,
           title: Text(
             "01:59",
             style: TextStyle(
                 color: Colors.blueAccent,
-                fontSize: MediaQuery.of(context).size.height *
-                    0.025,
+                fontSize: MediaQuery.of(context).size.height * 0.02,
                 fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
@@ -177,14 +177,14 @@ class _CompleteTripScreenState extends State<CompleteTripScreen> {
               style: TextStyle(
                   color: Colors.grey,
                   fontSize:
-                  MediaQuery.of(context).size.height *
-                      0.02,
+                  MediaQuery.of(context).size.height * 0.02,
                   fontWeight: FontWeight.bold),
               textAlign: TextAlign.center),
         ),
       ),
     );
   }
+
 
   Widget detailContainer(){
     return Row(

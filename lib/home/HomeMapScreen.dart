@@ -117,15 +117,16 @@ class _HomeMapScreenState extends State<HomeMapScreen> {
         Align(
           alignment: Alignment.topCenter,
           child: Container(
+            padding:EdgeInsets.all(5),
             margin:
-                EdgeInsets.only(top: MediaQuery.of(context).size.width * 0.01),
+                EdgeInsets.only(top: 10),
             width: MediaQuery.of(context).size.width * 0.3,
             height: MediaQuery.of(context).size.height * 0.05,
             alignment: Alignment.center,
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.all(
-                    Radius.circular(MediaQuery.of(context).size.width * 0.05))),
+                    Radius.circular(MediaQuery.of(context).size.height * 0.05/2))),
             child: Text(
               '\$150.00',
               style: TextStyle(
@@ -147,16 +148,17 @@ class _HomeMapScreenState extends State<HomeMapScreen> {
         Align(
           alignment: Alignment.topRight,
           child: Container(
+            padding: EdgeInsets.all(1.5),
             alignment: Alignment.center,
             width: MediaQuery.of(context).size.width * 0.07,
             height: MediaQuery.of(context).size.height * 0.02,
             margin: EdgeInsets.only(
-                top: MediaQuery.of(context).size.height * 0.03,
-                right: MediaQuery.of(context).size.width * 0.07),
+                top: 30,
+                right: 30),
             decoration: BoxDecoration(
                 color: Colors.red,
                 borderRadius: BorderRadius.all(
-                    Radius.circular(MediaQuery.of(context).size.width * 0.03))),
+                    Radius.circular(MediaQuery.of(context).size.height * 0.02/2))),
             child: Text(
               '5',
               style: TextStyle(
@@ -186,7 +188,7 @@ class _HomeMapScreenState extends State<HomeMapScreen> {
             },
             child: Container(
               margin: EdgeInsets.only(
-                  right: MediaQuery.of(context).size.width * 0.02),
+                  right: 10, top: 10),
               width: MediaQuery.of(context).size.width * 0.1,
               height: MediaQuery.of(context).size.height * 0.06,
               decoration:

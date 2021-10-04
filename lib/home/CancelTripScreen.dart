@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:fox_taxi_rider/GlobalVariables.dart';
 
 class CancelTripScreen extends StatefulWidget {
   @override
@@ -19,7 +20,6 @@ class _CancelTripScreenState extends State<CancelTripScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.white,
           leading: IconButton(
@@ -35,20 +35,26 @@ class _CancelTripScreenState extends State<CancelTripScreen> {
             'CANCEL TRIP',
             style: TextStyle(
                 color: Colors.black,
-                fontSize: MediaQuery.of(context).size.height * 0.02,
+                fontSize: hFontSize(context),
                 fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
+          elevation: 0.0,
         ),
-        body: Column(
-          children: [
-            canceltrip(),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: doneButton(),
-            )
-          ],
-        ));
+        body: Container(
+          margin: EdgeInsets.only(top: 3),
+          color: Colors.white,
+          child: Column(
+            children: [
+              canceltrip(),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: doneButton(),
+              )
+            ],
+          ),
+        ),
+    );
   }
 
   Widget canceltrip() {
@@ -72,7 +78,7 @@ class _CancelTripScreenState extends State<CancelTripScreen> {
                         hoverColor: Colors.white,
                         focusColor: Colors.white,
                         activeColor: Colors.white,
-                        fillColor: MaterialStateProperty.all(Colors.blue),
+                        fillColor: MaterialStateProperty.all(globalVariables.APP_THEME_COLOR),
                         checkColor: Colors.white,
                         // shape: RoundedRectangleBorder(
                         //   borderRadius: BorderRadius.circular(3),

@@ -19,10 +19,11 @@ class _Edit_Profile_ScreenState extends State<Edit_Profile_Screen> {
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700),
         ),
         centerTitle: true,
-        leading:
-        IconButton(icon: Icon(Icons.arrow_back)), // appbar leading icon.
+        elevation: 0,
+        iconTheme: IconThemeData(color: Colors.black),
       ),
       body: Container(
+        margin: EdgeInsets.only(top: 3),
         padding: EdgeInsets.only(left: 20, right: 20),
         color: Colors.white,
         child: Column(
@@ -99,7 +100,7 @@ class _Edit_Profile_ScreenState extends State<Edit_Profile_Screen> {
         Text("+91", style: TextStyle(fontSize: hFontSize(context))),
         Container(
           width: MediaQuery.of(context).size.width -
-              MediaQuery.of(context).size.width * 0.31,
+              MediaQuery.of(context).size.width * 0.17 - 50,
           child: TextField(
             decoration: InputDecoration(
               hintStyle: TextStyle(fontSize: hFontSize(context)),
@@ -158,7 +159,8 @@ class _Edit_Profile_ScreenState extends State<Edit_Profile_Screen> {
                 "SAVE",
                 style: TextStyle(
                     fontSize: hFontSize(context), color: Colors.white),
-              ),    ),
+              ),
+          ),
         ),
       ),
     );

@@ -21,8 +21,8 @@ class _Add_MoneyTO_Wallet_ScreenState extends State<Add_MoneyTO_Wallet_Screen> {
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700),
         ),
         centerTitle: true,
-        leading:
-            IconButton(icon: Icon(Icons.arrow_back)), // appbar leading icon.
+        elevation: 0,
+        iconTheme: IconThemeData(color: Colors.black),// appbar leading icon.
       ),
       body: Column(
         children: [

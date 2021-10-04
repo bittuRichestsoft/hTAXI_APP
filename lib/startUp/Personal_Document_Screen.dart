@@ -28,21 +28,24 @@ class _Personal_Document_ScreenState extends State<Personal_Document_Screen> {
           margin: EdgeInsets.only(top: 3),
           color: Colors.white,
           padding: EdgeInsets.only(left: 20, right: 20),
-          child: ListView(
-            children: [
-              sizedBox025(),
-              BirthCertifiateTextField(),
-              sizedBox025(),
-              DrivingLicenceTextField(),
-              sizedBox025(),
-              PassportTextField(),
-              sizedBox025(),
-              ElectionCardTextField(),
-              sizedBox0035(),
-              terms_Conditions(),
-              sizedBox0035(),
-              NextContainer(),
-            ],
+          child: ScrollConfiguration(
+            behavior: MyBehavior(),
+            child: ListView(
+              children: [
+                sizedBox025(),
+                BirthCertifiateTextField(),
+                sizedBox025(),
+                DrivingLicenceTextField(),
+                sizedBox025(),
+                PassportTextField(),
+                sizedBox025(),
+                ElectionCardTextField(),
+                sizedBox0035(),
+                terms_Conditions(),
+                sizedBox0035(),
+                NextContainer(),
+              ],
+            ),
           ),
         ));
   }
@@ -246,7 +249,7 @@ class _Personal_Document_ScreenState extends State<Personal_Document_Screen> {
         },
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.grey,
+            color: globalVariables.APP_THEME_COLOR,
             borderRadius: BorderRadius.circular(
                 MediaQuery.of(context).size.height * 0.06 / 2),
           ),

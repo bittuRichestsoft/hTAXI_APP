@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fox_taxi_rider/Cancle_Trip_Screen.dart';
 import 'package:fox_taxi_rider/GlobalVariables.dart';
+import 'package:fox_taxi_rider/home/MyVehicle_List_Screen.dart';
+import 'package:fox_taxi_rider/home/ProfileScreen.dart';
+
+import 'home/Personal-InfoScreen.dart';
 
 class Settings_Screen extends StatefulWidget {
   @override
@@ -19,8 +22,8 @@ class _Settings_ScreenState extends State<Settings_Screen> {
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700),
         ),
         centerTitle: true,
-        leading:
-            IconButton(icon: Icon(Icons.arrow_back)), // appbar leading icon.
+        elevation: 0,
+        iconTheme: IconThemeData(color: Colors.black),
       ),
       body: ListView(
         shrinkWrap: true,
@@ -47,7 +50,7 @@ class _Settings_ScreenState extends State<Settings_Screen> {
             onTap: (){
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Cancle_Trip_Screen()),
+                MaterialPageRoute(builder: (context) => PersonalInfoScreen()),
               );
             },
             child: Row(
@@ -64,21 +67,30 @@ class _Settings_ScreenState extends State<Settings_Screen> {
               ],
             ),
           ),
-          sizedBox002(),
-          Row(
-            children: [
-              Icon(
-                Icons.directions_car,
-                size: MediaQuery.of(context).size.height * 0.04,
-              ),
-              sizedBoxWidth003(),
-              Text(
-                'My Vehicle',
-                style: TextStyle(fontSize: hFontSize(context)),
-              )
-            ],
+          sizedBox006(),
+          GestureDetector(
+            onTap: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MyVehicle_List_Screen()),
+              );
+
+            },
+            child: Row(
+              children: [
+                Icon(
+                  Icons.directions_car,
+                  size: MediaQuery.of(context).size.height * 0.04,
+                ),
+                sizedBoxWidth003(),
+                Text(
+                  'My Vehicle',
+                  style: TextStyle(fontSize: hFontSize(context)),
+                )
+              ],
+            ),
           ),
-          sizedBox002(),
+          sizedBox006(),
           Row(
             children: [
               Icon(
@@ -92,7 +104,7 @@ class _Settings_ScreenState extends State<Settings_Screen> {
               )
             ],
           ),
-          sizedBox002(),
+          sizedBox006(),
           Row(
             children: [
               Icon(
@@ -106,7 +118,7 @@ class _Settings_ScreenState extends State<Settings_Screen> {
               )
             ],
           ),
-          sizedBox002(),
+          sizedBox006(),
           Row(
             children: [
               Icon(
@@ -159,7 +171,7 @@ class _Settings_ScreenState extends State<Settings_Screen> {
               )
             ],
           ),
-          sizedBox002(),
+          sizedBox006(),
           Row(
             children: [
               Icon(
@@ -173,7 +185,7 @@ class _Settings_ScreenState extends State<Settings_Screen> {
               )
             ],
           ),
-          sizedBox002(),
+          sizedBox006(),
           Row(
             children: [
               Icon(
@@ -187,7 +199,7 @@ class _Settings_ScreenState extends State<Settings_Screen> {
               )
             ],
           ),
-          sizedBox002(),
+          sizedBox006(),
           Row(
             children: [
               Icon(
@@ -206,8 +218,8 @@ class _Settings_ScreenState extends State<Settings_Screen> {
     );
   }
 
-  Widget sizedBox002() {
-    return SizedBox(height: MediaQuery.of(context).size.height * 0.04);
+  Widget sizedBox006() {
+    return SizedBox(height: MediaQuery.of(context).size.height * 0.06);
   }
 
   Widget sizedBoxWidth003() {

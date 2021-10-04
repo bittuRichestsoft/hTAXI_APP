@@ -13,30 +13,33 @@ class _Bank_Detail_ScreenState extends State<Bank_Detail_Screen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.white,
-          title: Text(
-            'Bank Details',
-            style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700),
-          ),
-          centerTitle: true,
-          elevation: 0,
-          iconTheme: IconThemeData(color: Colors.black)
-        ),
+            backgroundColor: Colors.white,
+            title: Text(
+              'Bank Details',
+              style:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.w700),
+            ),
+            centerTitle: true,
+            elevation: 0,
+            iconTheme: IconThemeData(color: Colors.black)),
         body: Container(
           margin: EdgeInsets.only(top: 3),
           color: Colors.white,
           padding: EdgeInsets.only(left: 20, right: 20),
-          child: ListView(
-            children: [
-              bankNameTextField(),
-              accountHolderNameTextField(),
-              accountNumberTextField(),
-              swift_IFSC_CodeTextField(),
-              sizedBox05(),
-              terms_Conditions(),
-              sizedBox05(),
-              NextBtnContainer(),
-            ],
+          child: ScrollConfiguration(
+            behavior: MyBehavior(),
+            child: ListView(
+              children: [
+                bankNameTextField(),
+                accountHolderNameTextField(),
+                accountNumberTextField(),
+                swift_IFSC_CodeTextField(),
+                sizedBox05(),
+                terms_Conditions(),
+                sizedBox05(),
+                NextBtnContainer(),
+              ],
+            ),
           ),
         ));
   }
@@ -147,7 +150,7 @@ class _Bank_Detail_ScreenState extends State<Bank_Detail_Screen> {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => Personal_Document_Screen() ),
+            MaterialPageRoute(builder: (context) => Personal_Document_Screen()),
           );
         },
         child: Container(

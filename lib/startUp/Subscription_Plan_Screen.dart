@@ -22,14 +22,17 @@ class _Subscription_Plan_ScreeenState extends State<Subscription_Plan_Screeen> {
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700),
         ),
         centerTitle: true,
-        leading:
-            IconButton(icon: Icon(Icons.arrow_back)), // appbar leading icon.
+       elevation: 0,
+          iconTheme: IconThemeData(color: Colors.black),
       ),
-      body: ListView(
-        children: [
-          basicPlanContainer(),
-          classicPlanContainer(),
-        ],
+      body: ScrollConfiguration(
+        behavior: MyBehavior(),
+        child: ListView(
+          children: [
+            basicPlanContainer(),
+            classicPlanContainer(),
+          ],
+        ),
       ),
     );
   }

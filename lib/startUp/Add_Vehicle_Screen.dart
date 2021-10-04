@@ -23,29 +23,33 @@ class _Add_Vehicle_ScreenState extends State<Add_Vehicle_Screen> {
             style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700),
           ),
           centerTitle: true,
-          leading:
-          IconButton(icon: Icon(Icons.arrow_back)), // appbar leading icon.
+          elevation: 0,
+            iconTheme: IconThemeData(color: Colors.black)
         ),
         body: Container(
+          margin: EdgeInsets.only(top: 3),
           color: Colors.white,
           padding: EdgeInsets.only(left: 20, right: 20),
-          child: ListView(
-            children: [
-              sizedBox001(),
-              serviceTypeTextField(),
-              sizedBox001(),
-              carBrandTextField(),
-              sizedBox001(),
-              carModelTextField(),
-              sizedBox001(),
-              carManufacturerTextField(),
-              sizedBox001(),
-              carNumbePlateTextField(),
-              sizedBox001(),
-              colorTextField(),
-              sizedBox005(),
-              registerBtnContainer()
-            ],
+          child: ScrollConfiguration(
+            behavior: MyBehavior(),
+            child: ListView(
+              children: [
+                sizedBox001(),
+                serviceTypeTextField(),
+                sizedBox001(),
+                carBrandTextField(),
+                sizedBox001(),
+                carModelTextField(),
+                sizedBox001(),
+                carManufacturerTextField(),
+                sizedBox001(),
+                carNumbePlateTextField(),
+                sizedBox001(),
+                colorTextField(),
+                sizedBox005(),
+                registerBtnContainer()
+              ],
+            ),
           ),
         ));
   }
@@ -193,7 +197,7 @@ class _Add_Vehicle_ScreenState extends State<Add_Vehicle_Screen> {
         },
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.grey,
+            color: globalVariables.APP_THEME_COLOR,
             borderRadius: BorderRadius.circular(
                 MediaQuery
                     .of(context)

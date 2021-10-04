@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fox_taxi_rider/GlobalVariables.dart';
 import 'package:fox_taxi_rider/LoginScreen.dart';
+import 'package:fox_taxi_rider/startUp/Create_Profile_Screen.dart';
 
 class OTP_Verification extends StatefulWidget {
   @override
@@ -12,18 +13,28 @@ class _OTP_VerificationState extends State<OTP_Verification> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+          backgroundColor: Colors.white,
+          centerTitle: true,
+          elevation: 0,
+          iconTheme: IconThemeData(color: Colors.black)
+
+      ),
       body: Container(
         color: Colors.white,
         child: Padding(
           padding: EdgeInsets.only(
               left: MediaQuery.of(context).size.width * 0.05,
-              right: MediaQuery.of(context).size.width * 0.05,
-              top: MediaQuery.of(context).size.height * 0.03),
-          child: ListView(
+              right: MediaQuery.of(context).size.width * 0.05),
+          child: Column(
             children: [
-              Text(
-                "OTP Verification",
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
+              Row(
+                children: [
+                  Text(
+                    "OTP Verification",
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
+                  ),
+                ],
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.03,
@@ -180,12 +191,12 @@ class _OTP_VerificationState extends State<OTP_Verification> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => LoginScreen()),
+                    MaterialPageRoute(builder: (context) => Create_Profile_Screen()),
                   );
                 },
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Colors.grey[350],
+                    color: globalVariables.APP_THEME_COLOR,
                     borderRadius: BorderRadius.circular(
                         MediaQuery.of(context).size.height * 0.06 / 2),
                   ),

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fox_taxi_rider/GlobalVariables.dart';
+import 'package:fox_taxi_rider/home/HomeMapScreen.dart';
 import 'package:fox_taxi_rider/startUp/Reset_Password_Screen.dart';
 
 class Login_screen extends StatefulWidget {
@@ -22,7 +23,7 @@ class _Login_screenState extends State<Login_screen> {
       body: Container(
         padding: EdgeInsets.only(left: 20, right: 20),
         color: Colors.white,
-        child: ListView(
+        child: Column(
           children: [
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.03,
@@ -131,12 +132,12 @@ class _Login_screenState extends State<Login_screen> {
     return Align(
       alignment: Alignment.center,
       child: InkWell(
-        // onTap: () {
-        //   Navigator.push(
-        //     context,
-        //     MaterialPageRoute(builder: (context) => Login_screen()),
-        //   );
-        // },
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => HomeMapScreen()),
+          );
+        },
         child: Container(
           decoration: BoxDecoration(
             color: globalVariables.APP_THEME_COLOR,

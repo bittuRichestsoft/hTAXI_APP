@@ -20,22 +20,24 @@ class _Create_Profile_ScreenState extends State<Create_Profile_Screen> {
         body: Container(
           color: Colors.white,
           padding: EdgeInsets.only(left: 20, right: 20),
-          child: ListView(
-
-            children: [
-              //sizedBox05(),
-              titleText(),
-              firstNameTextField(),
-              lastNameTextField(),
-              mobileNumberTextField(),
-              homeAddressTextField(),
-              passwordTextField(),
-              sizedBox05(),
-              terms_Conditions(),
-              sizedBox05(),
-              registerContainer(),
-              sizedBox05(),
-            ],
+          child: ScrollConfiguration(
+            behavior: MyBehavior(),
+            child: ListView(
+              children: [
+                //sizedBox05(),
+                titleText(),
+                firstNameTextField(),
+                lastNameTextField(),
+                mobileNumberTextField(),
+                homeAddressTextField(),
+                passwordTextField(),
+                sizedBox05(),
+                terms_Conditions(),
+                sizedBox05(),
+                registerContainer(),
+                sizedBox05(),
+              ],
+            ),
           ),
         ));
   }

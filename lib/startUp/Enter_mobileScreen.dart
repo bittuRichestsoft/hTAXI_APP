@@ -14,14 +14,20 @@ class _Enter_mobileScreenState extends State<Enter_mobileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        centerTitle: true,
+        elevation: 0,
+        iconTheme: IconThemeData(color: Colors.black),
+      ),
       body: Container(
         color: Colors.white,
         child: Padding(
           padding: EdgeInsets.only(
-              left: MediaQuery.of(context).size.width * 0.05,
-              right: MediaQuery.of(context).size.width * 0.05,
-              top: MediaQuery.of(context).size.height * 0.03),
-          child: ListView(
+            left: MediaQuery.of(context).size.width * 0.05,
+            right: MediaQuery.of(context).size.width * 0.05,
+          ),
+          child: Column(
             children: [
               Text(
                 "Enter Mobile Number",
@@ -42,7 +48,8 @@ class _Enter_mobileScreenState extends State<Enter_mobileScreen> {
                   Text("+91", style: TextStyle(fontSize: 20)),
                   Container(
                     width: MediaQuery.of(context).size.width -
-                        MediaQuery.of(context).size.width * 0.3,
+                        50 -
+                        MediaQuery.of(context).size.width * 0.17,
                     child: TextField(
                       decoration: InputDecoration(
                         hintStyle: TextStyle(fontSize: 20),
@@ -82,7 +89,7 @@ class _Enter_mobileScreenState extends State<Enter_mobileScreen> {
                 },
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Colors.grey[350],
+                    color: globalVariables.APP_THEME_COLOR,
                     borderRadius: BorderRadius.circular(
                         MediaQuery.of(context).size.height * 0.06 / 2),
                   ),
@@ -155,10 +162,9 @@ class _Enter_mobileScreenState extends State<Enter_mobileScreen> {
                   height: MediaQuery.of(context).size.height * 0.02,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width / 3.5,
-                    ),
                     GestureDetector(
                       onTap: () {
                         Navigator.pop(context);
@@ -183,7 +189,8 @@ class _Enter_mobileScreenState extends State<Enter_mobileScreen> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => OTP_Verification()),
+                          MaterialPageRoute(
+                              builder: (context) => OTP_Verification()),
                         );
                       },
                       child: Container(

@@ -20,8 +20,8 @@ class _Trip_ScreenState extends State<Trip_Screen> {
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700),
         ),
         centerTitle: true,
-        leading:
-            IconButton(icon: Icon(Icons.arrow_back)), // appbar leading icon.
+        elevation: 0,
+        iconTheme: IconThemeData(color: Colors.black),// appbar leading icon.
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
